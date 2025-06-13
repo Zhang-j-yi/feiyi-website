@@ -1,0 +1,814 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 通用布局容器 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头部样式 */
+.toubu {
+    background: linear-gradient(to right, #e8b143a5, #e1a20fac);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.daohang {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.daohang-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.daohang-item {
+    padding: 15px 25px;
+    position: relative;
+}
+
+.daohang-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.daohang-item:hover a {
+    color: #e74c3c;
+}
+
+.daohang-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #e74c3c;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.daohang-item:hover::after {
+    width: 100%;
+}
+
+/* Banner样式 */
+.banner {
+    height: 500px;
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+/* 内容区块通用样式 */
+.neirong-kuai {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.biaoti {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* 图片占位符样式 */
+.tupian-box {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.tupian-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tupian-box a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.tupian-box:hover {
+    transform: translateY(-5px);
+}
+
+.tupian-box:hover a {
+    background: rgba(231, 76, 60, 0.9);
+}
+
+/* 底部样式 */
+.dibu {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.donghua {
+    animation: fadeIn 1s ease-out;
+}
+
+/* 按钮样式 */
+.anniu {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.anniu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* 表单样式 */
+.biaodan {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.biaodan-item {
+    margin-bottom: 20px;
+}
+
+.biaodan-item input,
+.biaodan-item textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.biaodan-item input:focus,
+.biaodan-item textarea:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+/* 布局说明样式 */
+.buju-shuoming {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+/* 时间轴样式 */
+.shijian-zhou {
+    padding: 30px 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.shijian-xiang {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shijian-xiang:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.shijian-xiang .shijian {
+    min-width: 100px;
+    padding: 10px;
+    background: #e74c3c;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.shijian-xiang .neirong {
+    flex: 1;
+}
+
+.shijian-xiang .neirong h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.jigou-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.jigou-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.jigou-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.jigou-tupian {
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.jigou-item h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.chengguo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.chengguo-xiang {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chengguo-xiang:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.chengguo-tupian {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.chengguo-xiang .wenzi {
+    flex: 1;
+}
+
+.chengguo-xiang .wenzi h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* 中国戏曲页面样式 */
+.jianjie-text {
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.tese-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tese-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tese-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.tese-tupian {
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.tese-item h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.juzhong-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.juzhong-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.juzhong-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.juzhong-tupian {
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.juzhong-item h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.shijian-dian {
+    position: relative;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shijian-dian:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.shijian-dian h3 {
+    color: #e74c3c;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.shijian-dian h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #e74c3c;
+    border-radius: 50%;
+}
+
+.shijian-dian p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 25px;
+}
+
+/* 保护现状样式 */
+.baohu-container {
+    padding: 30px;
+    background: linear-gradient(135deg, #fff5f5, #fff);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.1);
+}
+
+.baohu-item {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.baohu-item:hover {
+    transform: translateY(-5px);
+}
+
+.baohu-item h3 {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.baohu-item p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.baohu-item ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.baohu-item li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.baohu-item li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: #e74c3c;
+    border-radius: 50%;
+}
+
+
+/* 保护成果样式 */
+.chengguo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.chengguo-xiang {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.chengguo-xiang .wenzi {
+    padding: 15px;
+}
+
+.chengguo-xiang h3 {
+    margin-bottom: 10px;
+}
+
+/* 布局说明列表样式 */
+.shuoming-list {
+    list-style: none;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.shuoming-list li {
+    margin-bottom: 5px;
+}
+
+.shuoming-title {
+    margin: 20px 0 10px;
+}
+
+/* 底部样式扩展 */
+.dibu-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dibu-section {
+    flex: 1;
+}
+
+.dibu-section h3 {
+    margin-bottom: 20px;
+}
+
+.dibu-copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 联系方式卡片样式 */
+.lianxi-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.lianxi-card {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.lianxi-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+}
+
+.lianxi-card h3 {
+    margin-bottom: 15px;
+}
+
+/* 地图容器样式 */
+.ditu-container {
+    height: 400px;
+}
+
+/* 头部标题样式 */
+.biaoti-toubu {
+    color: #fff;
+    text-align: center;
+}
+
+/* Banner图片样式 */
+.banner-tupian {
+    height: 300px;
+}
+
+/* 首页Banner图片样式 */
+.banner-tupian-shouye {
+    height: 400px;
+}
+
+/* 登录页Banner图片样式 */
+.banner-tupian-denglu {
+    height: 200px;
+}
+
+/* 新闻列表样式 */
+.xinwen-list {
+    list-style: none;
+}
+
+.xinwen-item {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.xinwen-date {
+    color: #e74c3c;
+}
+
+/* 活动卡片样式 */
+.huodong-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.huodong-card .wenzi {
+    padding: 15px;
+}
+
+.huodong-card .shijian {
+    margin: 10px 0;
+    color: #666;
+}
+
+.huodong-card .miaoshu {
+    margin-bottom: 15px;
+}
+
+/* 链接样式 */
+.lianjie {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.lianjie:hover {
+    text-decoration: underline;
+}
+
+/* 网格布局容器 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* 弹性布局容器 */
+.flex-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* 图片尺寸样式 */
+.tupian-small {
+    width: 50px;
+    height: 50px;
+}
+
+.tupian-medium {
+    width: 200px;
+    height: 150px;
+}
+
+.tupian-large {
+    width: 300px;
+    height: 200px;
+    float: right;
+    margin-left: 20px;
+}
+
+/* 活动列表样式 */
+.huodong-list {
+    list-style: none;
+}
+
+.huodong-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.huodong-item:last-child {
+    border-bottom: none;
+}
+
+.huodong-shijian {
+    color: #e74c3c;
+}
+
+/* 活动卡片样式 */
+.huodong-card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.huodong-biaoti {
+    margin-bottom: 15px;
+}
+
+.huodong-neirong {
+    padding: 15px;
+}
+
+.huodong-miaoshu {
+    margin-bottom: 15px;
+}
+
+/* 活动回顾卡片样式 */
+.huodong-huigu-card {
+    width: calc(50% - 10px);
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.huodong-huigu-content {
+    flex: 1;
+}
+
+/* 按钮样式扩展 */
+.anniu-margin {
+    margin-top: 20px;
+}
+
+/* 布局容器样式扩展 */
+.flex-wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+/* 登录页面样式 */
+.denglu-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.denglu-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.denglu-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.denglu-third-party {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.denglu-register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.denglu-features {
+    line-height: 1.8;
+    margin-top: 40px;
+}
+
+.denglu-features-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.denglu-features-list li {
+    margin-bottom: 10px;
+}
+
+.denglu-features-list li::before {
+    content: "✓";
+    margin-right: 10px;
+    color: #e74c3c;
+}
+
+/* 按钮样式扩展 */
+.anniu-full {
+    width: 100%;
+}
+
+/* 链接样式扩展 */
+.lianjie-wangji {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.lianjie-wangji:hover {
+    text-decoration: underline;
+}
